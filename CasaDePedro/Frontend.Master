@@ -1,0 +1,189 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Frontend.Master.cs" Inherits="CasaDePedro.frontend" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link runat="server" href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <title><%: Page.Title %> | CasaDePedro Hotels</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:ContentPlaceHolder>
+
+    <!--Insert CSS links-->
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
+<%--    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/owl.carousel.css" rel="stylesheet" />
+    <link href="Content/animate.min.css" rel="stylesheet" />
+    <link href="Content/Site.css" rel="stylesheet" />--%>
+</head>
+<body>
+    <!-- Google Tag Manager -->
+    <noscript>
+        <iframe src="//www.googletagmanager.com/ns.html?id=GTM-KNVM7K"
+            height="0" width="0" style="display: none; visibility: hidden"></iframe>
+    </noscript>
+    <script>(function (w, d, s, l, i) {
+    w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+        new Date().getTime(), event: 'gtm.js'
+    }); var f = d.getElementsByTagName(s)[0],
+    j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+    '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+})(window, document, 'script', 'dataLayer', 'GTM-KNVM7K');</script>
+    <!-- End Google Tag Manager -->
+
+
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server">
+            <Scripts>
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+            </Scripts>
+        </asp:ScriptManager>
+        <!-- Navbar-->
+        <div class="navbar navbar-default navbar-static-top <%--navbar-fixed-top--%>">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" runat="server" href="~/">
+                        <asp:Image ID="Image1" ImageUrl="~/Images/g3234-9.png" CssClass="img-responsive visible-sm visible-xs" runat="server" />
+                        <asp:Image ID="Image2" ImageUrl="~/Images/g3234.png" CssClass="img-responsive hidden-sm hidden-xs" runat="server" />
+                    </a>
+                </div>
+                <div class="navbar-collapse collapse navbar-right">
+                    <ul class="nav navbar-nav">
+                        <li><a runat="server" href="~/">Home</a></li>
+                        <li><a runat="server" href="~/SuitesAndRooms.aspx">Suites & Rooms</a></li>
+                        <li><a runat="server" href="~/RestaurantAndBars.aspx">Restaurants & Bars</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More <span class="caret"></span></a>
+                            <ul class="dropdown-menu animated fadeInRight">
+                                <li><a runat="server" href="~/MeetingsAndEvents.aspx">Meetings & Events</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a runat="server" href="~/RecreationalVenues.aspx">Recreational Venues</a></li>
+                            </ul>
+                        </li>
+
+                        <li><a runat="server" href="~/ContactUs.aspx">Contact Us</a></li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <asp:ContentPlaceHolder ID="FrontendContent" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
+        <footer class="wow fadeInDown animated">
+
+            <div class="container social-media">
+                <p>Connect with Us</p>
+                <hr />
+                <asp:HyperLink ID="HyperLink4" CssClass="wow animated" runat="server" NavigateUrl="https://www.instagram.com/casa_de_pedro_bush_bar/">
+                    <asp:Image ID="Image3" runat="server" ImageUrl="~/Images/instagram.png" />
+                </asp:HyperLink>
+                <asp:HyperLink ID="HyperLink5" CssClass="wow animated" runat="server" NavigateUrl="https://www.facebook.com/Casadepedrobushbar/">
+                    <asp:Image ID="Image4" runat="server" ImageUrl="~/Images/facebook.png" />
+                </asp:HyperLink>
+            </div>
+            <br />
+            <div class="container">
+
+                <p>
+                    &copy; <%: DateTime.Now.Year %> - Casa De Pedro Hotels Limited | <a href="http://webmail.casadepedrohotels.com.ng">Staff Mail</a> | <a runat="server" href="~/Account/Login.aspx"> <span class="glyphicon glyphicon-user"></span> </a> &nbsp;|
+                                       
+                    <%--<asp:LoginView ID="LoginView1" runat="server">
+                        <AnonymousTemplate>
+                            <a runat="server" href="~/Account/Login.aspx">Log In</a>
+                        </AnonymousTemplate>
+                        <LoggedInTemplate>
+                            <asp:LoginName ID="LoginName1" runat="server" FormatString="Hello {0}" />
+                            &nbsp;|
+                        <asp:LoginStatus ID="LoginStatus1" runat="server" />
+                        </LoggedInTemplate>
+                        <RoleGroups>
+                            <asp:RoleGroup Roles="Manager">
+                                <ContentTemplate>
+                                    <asp:LoginName ID="LoginName2" runat="server" FormatString="Hello {0}" />
+                                    &nbsp;|
+                                <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/Booking/Default.aspx">Management</asp:HyperLink>
+                                    &nbsp;|
+                                <asp:LoginStatus ID="LoginStatus2" runat="server" />
+                                </ContentTemplate>
+                            </asp:RoleGroup>
+                            <asp:RoleGroup Roles="Administrator">
+                                <ContentTemplate>
+                                    <asp:LoginName ID="LoginName3" runat="server" FormatString="Hello {0}" />
+                                    &nbsp;|
+                                <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/Booking/Default.aspx">Management</asp:HyperLink>
+                                    &nbsp;|
+                                <asp:LoginStatus ID="LoginStatus3" runat="server" />
+                                </ContentTemplate>
+                            </asp:RoleGroup>
+                            <asp:RoleGroup Roles="Frontdesk">
+                                <ContentTemplate>
+                                    <asp:LoginName ID="LoginName2" runat="server" FormatString="Hello {0}" />
+                                    &nbsp;|
+                                <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/Booking/Default.aspx">Management</asp:HyperLink>
+                                    &nbsp;|
+                                <asp:LoginStatus ID="LoginStatus2" runat="server" />
+                                </ContentTemplate>
+                            </asp:RoleGroup>
+                        </RoleGroups>
+                    </asp:LoginView>--%>
+
+                    Designed by:
+                    <asp:HyperLink ID="HyperLink1" NavigateUrl="http://www.rickwaisolutions.com" runat="server">Rickwai Solutions</asp:HyperLink>
+                </p>                
+            </div>
+        </footer>
+    </form>
+    <!--Previous js location-->
+
+</body>
+</html>
+<%--<script type="text/javascript" src='<%= Page.ResolveClientUrl("~/Scripts/jquery-2.2.0.min.js") %>'> </script>
+
+<script type="text/javascript" src='<%= Page.ResolveClientUrl("~/Scripts/bootstrap.min.js") %>'></script>--%>
+<script type="text/javascript" src='<%= Page.ResolveClientUrl("~/Scripts/owl.carousel.min.js") %>'>'></script>
+<script type="text/javascript" src='<%= Page.ResolveClientUrl("~/Scripts/wow.min.js") %>'></script>
+<!-- adding 'active class' to image carousel -->
+<script type="text/javascript">
+    $(function () {
+        $('.item:first').addClass('active')
+    });
+</script>
+
+<!--animate motion-->
+<script>
+    new WOW().init();
+</script>
+
+<script>
+    $(document).ready(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+</script>
+
+<script type="text/javascript">
+    $(function () {
+        $('[data-toggle="popover"]').popover();
+    })
+</script>
+
+
+
+

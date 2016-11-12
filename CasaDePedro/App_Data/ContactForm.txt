@@ -1,0 +1,8 @@
+﻿Dear Sir/Madam,
+
+A user has left the following message on Casa De Pedro Hotels website:
+
+Name: ##Name##
+Phone Number: ##PhoneNumber##
+Email Address: ##Email##
+Comments: ##Comments##

@@ -1,0 +1,435 @@
+﻿/*Form Input*/
+select, select.form-control {
+    border: 1px solid silver;
+    background-color: #FFF;
+}
+
+textarea, textarea.form-control, input.form-control, input[type="text"], input[type="password"], input[type="email"], input[type="number"], .form-control[type="text"], .form-control[type="password"], .form-control[type="email"], .form-control[type="tel"], .form-control[contenteditable] {
+    border: 1px solid silver;
+    background-color: #FFF;
+}
+
+.form-control, input {
+    border-width: 2px;
+    box-shadow: none;
+    text-align: left;
+}
+
+.form-date {
+    max-width: 50px;
+}
+
+.navbar-brand {
+    padding: 0px 0px;
+}
+
+
+/*Dummy Page*/
+.dummyIcon {
+    color: #D8281A;
+    text-align: center;
+    margin-top: 100px;
+    font-size: 75px;
+}
+
+/*Nav Features*/
+.site-brand {
+    color: #D8281A;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: #D8281A;
+}
+
+.dropdown-menu > li > a {
+    color: #D8281A;
+}
+
+.navbar-wrapper > .container {
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+.navbar-default .navbar-toggle {
+    border: 2px solid #D8281A;
+    background-color: none;
+}
+
+    .navbar-default .navbar-toggle:hover {
+        background-color: silver;
+    }
+
+    .navbar-default .navbar-toggle .icon-bar {
+        background-color: #D8281A;
+    }
+
+.navbar {
+    position: relative;
+    min-height: 68px;
+    margin-bottom: 0px;
+    border: 1px solid transparent;
+}
+
+body {
+    /*padding-top: 65px;*/
+    /*font-family: 'Roboto',arial,sans-serif;*/
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+    body a {
+        color: #D8281A;
+    }
+
+/*Body Text*/
+.grid-table {
+    color: black;
+}
+
+h1, h2 {
+    color: #D8281A;
+    text-align: center;
+    /*font-family: 'Roboto Slab',palatino,serif;*/
+    font-family: "industrial736_btroman", Garamond, "Hoefler Text", Times New Roman, Times, serif;
+    font-size: 25px;
+    font-weight: 300;
+    letter-spacing: -.2px;
+    line-height: 38px;
+}
+
+h3, h4 {
+    font-family: "industrial736_btroman", Garamond, "Hoefler Text", Times New Roman, Times, serif;
+    color: #D8281A;
+    font-size: 18px;
+    line-height: 20px;
+}
+/*Body*/
+
+.body-content {
+    min-height: 520px;
+    /*padding-left: 15px;
+    padding-right: 15px;*/
+}
+
+
+.page-banner {
+    background-color: #337ab7;
+    min-height: 300px;
+}
+
+.default-body-content {
+    min-height: 350px;
+    background-image: url(../Images/Sliders/DSC00165.jpg);
+    background-repeat: no-repeat;
+}
+
+.fview-detail .row {
+    min-height: 50px;
+}
+
+.row {
+    margin-right: 0px;
+    margin-left: 0px;
+}
+
+.fview-detail .col-sm-3 {
+    font-weight: bold;
+    font-weight: 100;
+    font-size: 14px;
+    color: #888;
+    font-family: Algerian;
+}
+
+.canProfile h4 {
+    text-align: left;
+}
+
+.content-heading h4 {
+    text-transform: none;
+}
+
+.main-bg-container {
+    min-height: 540px;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-image: url(../Images/SiteBuild/bg.jpg);
+}
+
+
+
+.container-fluid {
+    padding: 0px;
+}
+
+.panel-body {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+
+
+.btn {
+    /*text-transform:inherit;*/
+}
+
+.bookingPanel {
+    margin: 5px 0px 5px 10px;
+    border-radius: 15px;
+    /*padding: 0px 10px 0px 10px;*/
+}
+
+    .bookingPanel > .panel-heading {
+        border-radius: 15px;
+    }
+
+
+
+.fancy-header {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 25px;
+    font-family: 'Edwardian Script ITC';
+}
+
+/*Web form validation*/
+.FormError {
+    color: #D8281A;
+}
+
+
+p {
+    font-weight: 300;
+}
+
+
+
+.pop-help {
+    color: silver;
+}
+
+
+/*Update info*/
+.PleaseWait {
+    height: 32px;
+    width: 100%;
+    background-image: url(../Images/PleaseWait.gif);
+    background-repeat: no-repeat;
+    padding-left: 40px;
+    line-height: 32px;
+}
+
+/* Set widths on the form inputs since otherwise they're 100% wide */
+input,
+select,
+textarea {
+    max-width: 400px;
+}
+
+.input-well {
+    max-width: 450px;
+}
+
+textarea {
+    min-height: 100px;
+}
+
+
+/*Animate Features*/
+.glideLeft {
+    visibility: visible;
+    animation-name: fadeInLeft;
+    animation-duration: 2s;
+}
+
+.glideRight {
+    visibility: visible;
+    animation-name: fadeInRight;
+    animation-duration: 2s;
+}
+
+
+/*Footer Design*/
+
+footer {
+    margin-top: 0px;
+    padding-top: 10px;
+    background-color: #f1e7e7;
+    min-height: 100px;
+    text-align: center;
+    color: #848484;
+    font-family: "industrial736_btroman", Garamond, "Hoefler Text", Times New Roman, Times, serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+    footer a {
+        color: #848484;
+    }
+
+        footer a:hover, footer a:focus {
+            color: #D8281A;
+            text-decoration: none;
+        }
+
+.social-media {
+    text-align: center;
+    color: #848484;
+}
+
+    .social-media > p {
+        font-size: 25px;
+        font-family: "industrial736_btroman", Garamond, "Hoefler Text", Times New Roman, Times, serif;
+        margin: 10px 0px;
+    }
+
+    .social-media > hr {
+        border: 1px dotted white;
+        margin: 10px 5px 10px 5px;
+    }
+
+    .social-media > a:hover {
+        visibility: visible;
+        animation-name: fadeIn;
+    }
+
+.small-ddl {
+    max-width: 100px;
+}
+
+.fa-facebook-square {
+    color: #3b5998;
+}
+
+.fa-twitter-square {
+    color: #4099ff;
+}
+
+.fa-google-plus-square {
+    color: #cc2c2c;
+}
+
+    .fa-facebook-square:hover, .fa-twitter-square:hover, .fa-google-plus-square:hover {
+        font-size: 30px;
+    }
+
+/*Service List*/
+.serv-name-format {
+    padding: 4px 0px 8px 0px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.img-centralise {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/*Carousel Caption*/
+.carousel-caption {
+    color: #333333;
+    background-color: white;
+    opacity: 0.7;
+    padding: 2px 2px 5px 2px;
+}
+
+    .carousel-caption > h4 {
+        color: #D8281A;
+        font-size: 18px;
+    }
+
+    .carousel-caption > p {
+        color: blue;
+        font-size: 12px;
+    }
+
+/*MANAGEMENT SPECIFIC*/
+.mgt-table {
+    font-size: 13px;
+    font-weight: 100;
+}
+
+    .mgt-table th a {
+        color: black;
+    }
+
+.smallfont {
+    font-size: 14px;
+}
+
+@media screen and (min-width: 768px) {
+    body {
+        /*font-size: 16px;*/
+    }
+
+    table {
+        width: 100%;
+    }
+
+    h1, h2 {
+        font-size: 30px;
+        line-height: 58px;
+    }
+
+    h3, h4 {
+        font-size: 20px;
+        line-height: 40px;
+    }
+
+    /*.make-reservation {
+        border-right: 1px solid grey;
+        padding-right: 15px;
+    }*/
+    /*p {
+        font-size: 15px;
+    }*/
+
+    .frontend-Banner {
+        min-height: 300px;
+    }
+
+    .banner-text {
+        font-size: 35px;
+    }
+
+    .fancy-header {
+        font-size: 40px;
+    }
+
+
+    /*#D8281Aucing width of menu*/
+    .nav > li > a {
+        position: relative;
+        display: block;
+        padding: 10px 10px;
+    }
+
+    .carousel-caption > h4 {
+        color: #D8281A;
+        font-size: 28px;
+    }
+
+    .carousel-caption > p {
+        color: blue;
+        font-size: 18px;
+    }
+
+    .nav {
+        padding-top: 10px;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .navbar {
+        position: relative;
+        min-height: 80px;
+        margin-bottom: 0px;
+        border: 1px solid transparent;
+    }
+
+    .social-media > p {
+        font-size: 25px;
+    }
+}

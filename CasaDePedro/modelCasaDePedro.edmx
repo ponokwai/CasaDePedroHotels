@@ -1,0 +1,961 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="dbo_casadepedroModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.6" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="facilitypicgallery">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PicUrl" Type="varchar" MaxLength="200" />
+          <Property Name="Description" Type="varchar" MaxLength="200" />
+          <Property Name="FacilityUnitId" Type="tinyint" />
+          <Property Name="EditedBy" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="facilityunit">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="100" />
+          <Property Name="HotelCoreServiceId" Type="tinyint" />
+          <Property Name="HotelCoreSubServiceId" Type="tinyint" />
+          <Property Name="Details" Type="mediumtext" />
+          <Property Name="FrontPicUrl" Type="varchar" MaxLength="200" />
+          <Property Name="EditBy" Type="varchar" MaxLength="45" />
+        </EntityType>
+        <EntityType Name="homepageslider">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ImageUrl" Type="varchar" MaxLength="200" />
+          <Property Name="CaptionHeading" Type="varchar" MaxLength="150" />
+          <Property Name="CaptionDesc" Type="varchar" MaxLength="300" />
+          <Property Name="LastUpdatedBy" Type="varchar" MaxLength="45" />
+          <Property Name="LastUpdateDateTime" Type="datetime" Precision="0" />
+        </EntityType>
+        <EntityType Name="hotel">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="HotelName" Type="varchar" MaxLength="45" />
+        </EntityType>
+        <EntityType Name="hotelcoreservice">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ServiceCategory" Type="varchar" MaxLength="45" />
+        </EntityType>
+        <EntityType Name="hotelcoresubservice">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SubService" Type="varchar" MaxLength="45" />
+          <Property Name="CoreServiceId" Type="tinyint" />
+        </EntityType>
+        <EntityType Name="meetingeventreservation">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StartDateTime" Type="datetime" Precision="0" />
+          <Property Name="EndDateTime" Type="datetime" Precision="0" />
+          <Property Name="NoOfPerson" Type="smallint" />
+          <Property Name="HotelId" Type="tinyint" />
+          <Property Name="MeetingEventVenueId" Type="tinyint" />
+          <Property Name="FullName" Type="varchar" MaxLength="150" />
+          <Property Name="Phone" Type="varchar" MaxLength="45" />
+          <Property Name="Email" Type="varchar" MaxLength="150" />
+          <Property Name="Comment" Type="mediumtext" />
+          <Property Name="BookingConfirmed" Type="bool" />
+          <Property Name="ConfirmedBy" Type="varchar" MaxLength="45" />
+        </EntityType>
+        <EntityType Name="meetingeventvenue">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MEVenueName" Type="varchar" MaxLength="45" />
+          <Property Name="HotelId" Type="tinyint" />
+        </EntityType>
+        <EntityType Name="pagecontent">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PageTitle" Type="varchar" MaxLength="100" />
+          <Property Name="PageText" Type="longtext" />
+          <Property Name="PageUrl" Type="varchar" MaxLength="100" />
+          <Property Name="PageBannerUrl" Type="varchar" MaxLength="200" />
+          <Property Name="DefaultPageIconUrl" Type="varchar" MaxLength="200" />
+          <Property Name="EditedBy" Type="varchar" MaxLength="45" />
+          <Property Name="DateTimeEdited" Type="datetime" Precision="0" />
+        </EntityType>
+        <EntityType Name="restaurantbarreservation">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StartDateTime" Type="datetime" Precision="0" />
+          <Property Name="EndDateTime" Type="datetime" Precision="0" />
+          <Property Name="NoOfPerson" Type="smallint" />
+          <Property Name="HotelId" Type="tinyint" />
+          <Property Name="RestaurantBarVenueId" Type="tinyint" />
+          <Property Name="FullName" Type="varchar" MaxLength="100" />
+          <Property Name="Phone" Type="varchar" MaxLength="45" />
+          <Property Name="Email" Type="varchar" MaxLength="150" />
+          <Property Name="Comment" Type="mediumtext" />
+          <Property Name="BookingConfirmed" Type="bool" />
+          <Property Name="ConfirmedBy" Type="varchar" MaxLength="45" />
+        </EntityType>
+        <EntityType Name="restaurantbarvenue">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ResBarName" Type="varchar" MaxLength="45" />
+          <Property Name="HotelId" Type="tinyint" />
+        </EntityType>
+        <EntityType Name="roomreservation">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StartDate" Type="date" />
+          <Property Name="EndDate" Type="date" />
+          <Property Name="NoOfAdult" Type="tinyint" />
+          <Property Name="NoOfChild" Type="tinyint" />
+          <Property Name="HotelId" Type="tinyint" />
+          <Property Name="RoomTypeId" Type="tinyint" />
+          <Property Name="FullName" Type="varchar" MaxLength="100" />
+          <Property Name="Email" Type="varchar" MaxLength="150" />
+          <Property Name="Phone" Type="varchar" MaxLength="45" />
+          <Property Name="Comment" Type="mediumtext" />
+          <Property Name="BookingConfirmed" Type="bool" />
+          <Property Name="ConfirmedBy" Type="varchar" MaxLength="45" />
+        </EntityType>
+        <EntityType Name="roomtype">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Category" Type="varchar" MaxLength="45" />
+          <Property Name="HotelId" Type="tinyint" />
+          <Property Name="AmountPerNight" Type="int" />
+        </EntityType>
+        <Association Name="fk_FacilityPicGallery_FacilityUnit1">
+          <End Role="facilityunit" Type="Self.facilityunit" Multiplicity="0..1" />
+          <End Role="facilitypicgallery" Type="Self.facilitypicgallery" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="facilityunit">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="facilitypicgallery">
+              <PropertyRef Name="FacilityUnitId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_FacilityUnit_HotelCoreService1">
+          <End Role="hotelcoreservice" Type="Self.hotelcoreservice" Multiplicity="0..1" />
+          <End Role="facilityunit" Type="Self.facilityunit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="hotelcoreservice">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="facilityunit">
+              <PropertyRef Name="HotelCoreServiceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_FacilityUnit_HotelCoreSubService1">
+          <End Role="hotelcoresubservice" Type="Self.hotelcoresubservice" Multiplicity="0..1" />
+          <End Role="facilityunit" Type="Self.facilityunit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="hotelcoresubservice">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="facilityunit">
+              <PropertyRef Name="HotelCoreSubServiceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_HotelCoreSubService_HotelCoreService1">
+          <End Role="hotelcoreservice" Type="Self.hotelcoreservice" Multiplicity="0..1" />
+          <End Role="hotelcoresubservice" Type="Self.hotelcoresubservice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="hotelcoreservice">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="hotelcoresubservice">
+              <PropertyRef Name="CoreServiceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_MeetingEventReservation_Hotel1">
+          <End Role="hotel" Type="Self.hotel" Multiplicity="0..1" />
+          <End Role="meetingeventreservation" Type="Self.meetingeventreservation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="hotel">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="meetingeventreservation">
+              <PropertyRef Name="HotelId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_MeetingEventReservation_MeetingEventVenue1">
+          <End Role="meetingeventvenue" Type="Self.meetingeventvenue" Multiplicity="0..1" />
+          <End Role="meetingeventreservation" Type="Self.meetingeventreservation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="meetingeventvenue">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="meetingeventreservation">
+              <PropertyRef Name="MeetingEventVenueId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_MeetingEventVenue_Hotel1">
+          <End Role="hotel" Type="Self.hotel" Multiplicity="0..1" />
+          <End Role="meetingeventvenue" Type="Self.meetingeventvenue" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="hotel">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="meetingeventvenue">
+              <PropertyRef Name="HotelId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_RestaurantBarReservation_Hotel1">
+          <End Role="hotel" Type="Self.hotel" Multiplicity="0..1" />
+          <End Role="restaurantbarreservation" Type="Self.restaurantbarreservation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="hotel">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="restaurantbarreservation">
+              <PropertyRef Name="HotelId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_RestaurantBarReservation_RestaurantBarVenue1">
+          <End Role="restaurantbarvenue" Type="Self.restaurantbarvenue" Multiplicity="0..1" />
+          <End Role="restaurantbarreservation" Type="Self.restaurantbarreservation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="restaurantbarvenue">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="restaurantbarreservation">
+              <PropertyRef Name="RestaurantBarVenueId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_RestaurantBarVenue_Hotel1">
+          <End Role="hotel" Type="Self.hotel" Multiplicity="0..1" />
+          <End Role="restaurantbarvenue" Type="Self.restaurantbarvenue" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="hotel">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="restaurantbarvenue">
+              <PropertyRef Name="HotelId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_RoomReservation_Hotel1">
+          <End Role="hotel" Type="Self.hotel" Multiplicity="0..1" />
+          <End Role="roomreservation" Type="Self.roomreservation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="hotel">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="roomreservation">
+              <PropertyRef Name="HotelId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_RoomReservation_RoomType">
+          <End Role="roomtype" Type="Self.roomtype" Multiplicity="0..1" />
+          <End Role="roomreservation" Type="Self.roomreservation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="roomtype">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="roomreservation">
+              <PropertyRef Name="RoomTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_RoomType_Hotel1">
+          <End Role="hotel" Type="Self.hotel" Multiplicity="0..1" />
+          <End Role="roomtype" Type="Self.roomtype" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="hotel">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="roomtype">
+              <PropertyRef Name="HotelId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="dbo_casadepedroModelStoreContainer">
+          <EntitySet Name="facilitypicgallery" EntityType="Self.facilitypicgallery" Schema="dbo_casadepedro" store:Type="Tables" />
+          <EntitySet Name="facilityunit" EntityType="Self.facilityunit" Schema="dbo_casadepedro" store:Type="Tables" />
+          <EntitySet Name="homepageslider" EntityType="Self.homepageslider" Schema="dbo_casadepedro" store:Type="Tables" />
+          <EntitySet Name="hotel" EntityType="Self.hotel" Schema="dbo_casadepedro" store:Type="Tables" />
+          <EntitySet Name="hotelcoreservice" EntityType="Self.hotelcoreservice" Schema="dbo_casadepedro" store:Type="Tables" />
+          <EntitySet Name="hotelcoresubservice" EntityType="Self.hotelcoresubservice" Schema="dbo_casadepedro" store:Type="Tables" />
+          <EntitySet Name="meetingeventreservation" EntityType="Self.meetingeventreservation" Schema="dbo_casadepedro" store:Type="Tables" />
+          <EntitySet Name="meetingeventvenue" EntityType="Self.meetingeventvenue" Schema="dbo_casadepedro" store:Type="Tables" />
+          <EntitySet Name="pagecontent" EntityType="Self.pagecontent" Schema="dbo_casadepedro" store:Type="Tables" />
+          <EntitySet Name="restaurantbarreservation" EntityType="Self.restaurantbarreservation" Schema="dbo_casadepedro" store:Type="Tables" />
+          <EntitySet Name="restaurantbarvenue" EntityType="Self.restaurantbarvenue" Schema="dbo_casadepedro" store:Type="Tables" />
+          <EntitySet Name="roomreservation" EntityType="Self.roomreservation" Schema="dbo_casadepedro" store:Type="Tables" />
+          <EntitySet Name="roomtype" EntityType="Self.roomtype" Schema="dbo_casadepedro" store:Type="Tables" />
+          <AssociationSet Name="fk_FacilityPicGallery_FacilityUnit1" Association="Self.fk_FacilityPicGallery_FacilityUnit1">
+            <End Role="facilityunit" EntitySet="facilityunit" />
+            <End Role="facilitypicgallery" EntitySet="facilitypicgallery" />
+          </AssociationSet>
+          <AssociationSet Name="fk_FacilityUnit_HotelCoreService1" Association="Self.fk_FacilityUnit_HotelCoreService1">
+            <End Role="hotelcoreservice" EntitySet="hotelcoreservice" />
+            <End Role="facilityunit" EntitySet="facilityunit" />
+          </AssociationSet>
+          <AssociationSet Name="fk_FacilityUnit_HotelCoreSubService1" Association="Self.fk_FacilityUnit_HotelCoreSubService1">
+            <End Role="hotelcoresubservice" EntitySet="hotelcoresubservice" />
+            <End Role="facilityunit" EntitySet="facilityunit" />
+          </AssociationSet>
+          <AssociationSet Name="fk_HotelCoreSubService_HotelCoreService1" Association="Self.fk_HotelCoreSubService_HotelCoreService1">
+            <End Role="hotelcoreservice" EntitySet="hotelcoreservice" />
+            <End Role="hotelcoresubservice" EntitySet="hotelcoresubservice" />
+          </AssociationSet>
+          <AssociationSet Name="fk_MeetingEventReservation_Hotel1" Association="Self.fk_MeetingEventReservation_Hotel1">
+            <End Role="hotel" EntitySet="hotel" />
+            <End Role="meetingeventreservation" EntitySet="meetingeventreservation" />
+          </AssociationSet>
+          <AssociationSet Name="fk_MeetingEventReservation_MeetingEventVenue1" Association="Self.fk_MeetingEventReservation_MeetingEventVenue1">
+            <End Role="meetingeventvenue" EntitySet="meetingeventvenue" />
+            <End Role="meetingeventreservation" EntitySet="meetingeventreservation" />
+          </AssociationSet>
+          <AssociationSet Name="fk_MeetingEventVenue_Hotel1" Association="Self.fk_MeetingEventVenue_Hotel1">
+            <End Role="hotel" EntitySet="hotel" />
+            <End Role="meetingeventvenue" EntitySet="meetingeventvenue" />
+          </AssociationSet>
+          <AssociationSet Name="fk_RestaurantBarReservation_Hotel1" Association="Self.fk_RestaurantBarReservation_Hotel1">
+            <End Role="hotel" EntitySet="hotel" />
+            <End Role="restaurantbarreservation" EntitySet="restaurantbarreservation" />
+          </AssociationSet>
+          <AssociationSet Name="fk_RestaurantBarReservation_RestaurantBarVenue1" Association="Self.fk_RestaurantBarReservation_RestaurantBarVenue1">
+            <End Role="restaurantbarvenue" EntitySet="restaurantbarvenue" />
+            <End Role="restaurantbarreservation" EntitySet="restaurantbarreservation" />
+          </AssociationSet>
+          <AssociationSet Name="fk_RestaurantBarVenue_Hotel1" Association="Self.fk_RestaurantBarVenue_Hotel1">
+            <End Role="hotel" EntitySet="hotel" />
+            <End Role="restaurantbarvenue" EntitySet="restaurantbarvenue" />
+          </AssociationSet>
+          <AssociationSet Name="fk_RoomReservation_Hotel1" Association="Self.fk_RoomReservation_Hotel1">
+            <End Role="hotel" EntitySet="hotel" />
+            <End Role="roomreservation" EntitySet="roomreservation" />
+          </AssociationSet>
+          <AssociationSet Name="fk_RoomReservation_RoomType" Association="Self.fk_RoomReservation_RoomType">
+            <End Role="roomtype" EntitySet="roomtype" />
+            <End Role="roomreservation" EntitySet="roomreservation" />
+          </AssociationSet>
+          <AssociationSet Name="fk_RoomType_Hotel1" Association="Self.fk_RoomType_Hotel1">
+            <End Role="hotel" EntitySet="hotel" />
+            <End Role="roomtype" EntitySet="roomtype" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="dbo_casadepedroModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="hotel">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="SByte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="HotelName" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="meetingeventreservations" Relationship="Self.fk_MeetingEventReservation_Hotel1" FromRole="hotel" ToRole="meetingeventreservation" />
+          <NavigationProperty Name="meetingeventvenues" Relationship="Self.fk_MeetingEventVenue_Hotel1" FromRole="hotel" ToRole="meetingeventvenue" />
+          <NavigationProperty Name="restaurantbarvenues" Relationship="Self.fk_RestaurantBarVenue_Hotel1" FromRole="hotel" ToRole="restaurantbarvenue" />
+          <NavigationProperty Name="roomreservations" Relationship="Self.fk_RoomReservation_Hotel1" FromRole="hotel" ToRole="roomreservation" />
+          <NavigationProperty Name="roomtypes" Relationship="Self.fk_RoomType_Hotel1" FromRole="hotel" ToRole="roomtype" />
+          <NavigationProperty Name="restaurantbarreservations" Relationship="dbo_casadepedroModel.fk_RestaurantBarReservation_Hotel1" FromRole="hotel" ToRole="restaurantbarreservation" />
+        </EntityType>
+        <EntityType Name="meetingeventreservation">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StartDateTime" Type="DateTime" />
+          <Property Name="EndDateTime" Type="DateTime" />
+          <Property Name="NoOfPerson" Type="Int16" />
+          <Property Name="HotelId" Type="SByte" />
+          <Property Name="MeetingEventVenueId" Type="SByte" />
+          <Property Name="FullName" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Phone" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Comment" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+          <Property Name="BookingConfirmed" Type="Boolean" />
+          <NavigationProperty Name="hotel" Relationship="Self.fk_MeetingEventReservation_Hotel1" FromRole="meetingeventreservation" ToRole="hotel" />
+          <NavigationProperty Name="meetingeventvenue" Relationship="Self.fk_MeetingEventReservation_MeetingEventVenue1" FromRole="meetingeventreservation" ToRole="meetingeventvenue" />
+          <Property Name="ConfirmedBy" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="meetingeventvenue">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="SByte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MEVenueName" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="HotelId" Type="SByte" />
+          <NavigationProperty Name="hotel" Relationship="Self.fk_MeetingEventVenue_Hotel1" FromRole="meetingeventvenue" ToRole="hotel" />
+          <NavigationProperty Name="meetingeventreservations" Relationship="Self.fk_MeetingEventReservation_MeetingEventVenue1" FromRole="meetingeventvenue" ToRole="meetingeventreservation" />
+        </EntityType>
+        <EntityType Name="restaurantbarreservation">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StartDateTime" Type="DateTime" />
+          <Property Name="EndDateTime" Type="DateTime" />
+          <Property Name="NoOfPerson" Type="Int16" />
+          <Property Name="HotelId" Type="SByte" />
+          <Property Name="RestaurantBarVenueId" Type="SByte" />
+          <Property Name="FullName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Phone" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Comment" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+          <Property Name="BookingConfirmed" Type="Boolean" />
+          <NavigationProperty Name="restaurantbarvenue" Relationship="Self.fk_RestaurantBarReservation_RestaurantBarVenue1" FromRole="restaurantbarreservation" ToRole="restaurantbarvenue" />
+          <NavigationProperty Name="hotel" Relationship="dbo_casadepedroModel.fk_RestaurantBarReservation_Hotel1" FromRole="restaurantbarreservation" ToRole="hotel" />
+          <Property Name="ConfirmedBy" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="restaurantbarvenue">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="SByte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ResBarName" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="HotelId" Type="SByte" />
+          <NavigationProperty Name="hotel" Relationship="Self.fk_RestaurantBarVenue_Hotel1" FromRole="restaurantbarvenue" ToRole="hotel" />
+          <NavigationProperty Name="restaurantbarreservations" Relationship="Self.fk_RestaurantBarReservation_RestaurantBarVenue1" FromRole="restaurantbarvenue" ToRole="restaurantbarreservation" />
+        </EntityType>
+        <EntityType Name="roomreservation">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StartDate" Type="DateTime" />
+          <Property Name="EndDate" Type="DateTime" />
+          <Property Name="NoOfAdult" Type="SByte" />
+          <Property Name="NoOfChild" Type="SByte" />
+          <Property Name="HotelId" Type="SByte" />
+          <Property Name="RoomTypeId" Type="SByte" />
+          <Property Name="FullName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Phone" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="Comment" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+          <Property Name="BookingConfirmed" Type="Boolean" />
+          <NavigationProperty Name="hotel" Relationship="Self.fk_RoomReservation_Hotel1" FromRole="roomreservation" ToRole="hotel" />
+          <NavigationProperty Name="roomtype" Relationship="Self.fk_RoomReservation_RoomType" FromRole="roomreservation" ToRole="roomtype" />
+          <Property Name="ConfirmedBy" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="roomtype">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="SByte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Category" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="HotelId" Type="SByte" />
+          <NavigationProperty Name="hotel" Relationship="Self.fk_RoomType_Hotel1" FromRole="roomtype" ToRole="hotel" />
+          <NavigationProperty Name="roomreservations" Relationship="Self.fk_RoomReservation_RoomType" FromRole="roomtype" ToRole="roomreservation" />
+          <Property Name="AmountPerNight" Type="Int32" />
+        </EntityType>
+        <Association Name="fk_MeetingEventReservation_Hotel1">
+          <End Role="hotel" Type="Self.hotel" Multiplicity="0..1" />
+          <End Role="meetingeventreservation" Type="Self.meetingeventreservation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="hotel">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="meetingeventreservation">
+              <PropertyRef Name="HotelId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_MeetingEventVenue_Hotel1">
+          <End Role="hotel" Type="Self.hotel" Multiplicity="0..1" />
+          <End Role="meetingeventvenue" Type="Self.meetingeventvenue" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="hotel">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="meetingeventvenue">
+              <PropertyRef Name="HotelId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_RestaurantBarVenue_Hotel1">
+          <End Role="hotel" Type="Self.hotel" Multiplicity="0..1" />
+          <End Role="restaurantbarvenue" Type="Self.restaurantbarvenue" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="hotel">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="restaurantbarvenue">
+              <PropertyRef Name="HotelId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_RoomReservation_Hotel1">
+          <End Role="hotel" Type="Self.hotel" Multiplicity="0..1" />
+          <End Role="roomreservation" Type="Self.roomreservation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="hotel">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="roomreservation">
+              <PropertyRef Name="HotelId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_RoomType_Hotel1">
+          <End Role="hotel" Type="Self.hotel" Multiplicity="0..1" />
+          <End Role="roomtype" Type="Self.roomtype" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="hotel">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="roomtype">
+              <PropertyRef Name="HotelId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_MeetingEventReservation_MeetingEventVenue1">
+          <End Role="meetingeventvenue" Type="Self.meetingeventvenue" Multiplicity="0..1" />
+          <End Role="meetingeventreservation" Type="Self.meetingeventreservation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="meetingeventvenue">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="meetingeventreservation">
+              <PropertyRef Name="MeetingEventVenueId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_RestaurantBarReservation_RestaurantBarVenue1">
+          <End Role="restaurantbarvenue" Type="Self.restaurantbarvenue" Multiplicity="0..1" />
+          <End Role="restaurantbarreservation" Type="Self.restaurantbarreservation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="restaurantbarvenue">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="restaurantbarreservation">
+              <PropertyRef Name="RestaurantBarVenueId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_RoomReservation_RoomType">
+          <End Role="roomtype" Type="Self.roomtype" Multiplicity="0..1" />
+          <End Role="roomreservation" Type="Self.roomreservation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="roomtype">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="roomreservation">
+              <PropertyRef Name="RoomTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="dbo_casadepedroEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="hotels" EntityType="Self.hotel" />
+          <EntitySet Name="meetingeventreservations" EntityType="Self.meetingeventreservation" />
+          <EntitySet Name="meetingeventvenues" EntityType="Self.meetingeventvenue" />
+          <EntitySet Name="restaurantbarreservations" EntityType="Self.restaurantbarreservation" />
+          <EntitySet Name="restaurantbarvenues" EntityType="Self.restaurantbarvenue" />
+          <EntitySet Name="roomreservations" EntityType="Self.roomreservation" />
+          <EntitySet Name="roomtypes" EntityType="Self.roomtype" />
+          <AssociationSet Name="fk_MeetingEventReservation_Hotel1" Association="Self.fk_MeetingEventReservation_Hotel1">
+            <End Role="hotel" EntitySet="hotels" />
+            <End Role="meetingeventreservation" EntitySet="meetingeventreservations" />
+          </AssociationSet>
+          <AssociationSet Name="fk_MeetingEventVenue_Hotel1" Association="Self.fk_MeetingEventVenue_Hotel1">
+            <End Role="hotel" EntitySet="hotels" />
+            <End Role="meetingeventvenue" EntitySet="meetingeventvenues" />
+          </AssociationSet>
+          <AssociationSet Name="fk_RestaurantBarVenue_Hotel1" Association="Self.fk_RestaurantBarVenue_Hotel1">
+            <End Role="hotel" EntitySet="hotels" />
+            <End Role="restaurantbarvenue" EntitySet="restaurantbarvenues" />
+          </AssociationSet>
+          <AssociationSet Name="fk_RoomReservation_Hotel1" Association="Self.fk_RoomReservation_Hotel1">
+            <End Role="hotel" EntitySet="hotels" />
+            <End Role="roomreservation" EntitySet="roomreservations" />
+          </AssociationSet>
+          <AssociationSet Name="fk_RoomType_Hotel1" Association="Self.fk_RoomType_Hotel1">
+            <End Role="hotel" EntitySet="hotels" />
+            <End Role="roomtype" EntitySet="roomtypes" />
+          </AssociationSet>
+          <AssociationSet Name="fk_MeetingEventReservation_MeetingEventVenue1" Association="Self.fk_MeetingEventReservation_MeetingEventVenue1">
+            <End Role="meetingeventvenue" EntitySet="meetingeventvenues" />
+            <End Role="meetingeventreservation" EntitySet="meetingeventreservations" />
+          </AssociationSet>
+          <AssociationSet Name="fk_RestaurantBarReservation_RestaurantBarVenue1" Association="Self.fk_RestaurantBarReservation_RestaurantBarVenue1">
+            <End Role="restaurantbarvenue" EntitySet="restaurantbarvenues" />
+            <End Role="restaurantbarreservation" EntitySet="restaurantbarreservations" />
+          </AssociationSet>
+          <AssociationSet Name="fk_RoomReservation_RoomType" Association="Self.fk_RoomReservation_RoomType">
+            <End Role="roomtype" EntitySet="roomtypes" />
+            <End Role="roomreservation" EntitySet="roomreservations" />
+          </AssociationSet>
+          <AssociationSet Name="fk_RestaurantBarReservation_Hotel1" Association="dbo_casadepedroModel.fk_RestaurantBarReservation_Hotel1">
+            <End Role="hotel" EntitySet="hotels" />
+            <End Role="restaurantbarreservation" EntitySet="restaurantbarreservations" />
+          </AssociationSet>
+          <EntitySet Name="facilitypicgalleries" EntityType="dbo_casadepedroModel.facilitypicgallery" />
+          <EntitySet Name="facilityunits" EntityType="dbo_casadepedroModel.facilityunit" />
+          <EntitySet Name="hotelcoreservices" EntityType="dbo_casadepedroModel.hotelcoreservice" />
+          <EntitySet Name="hotelcoresubservices" EntityType="dbo_casadepedroModel.hotelcoresubservice" />
+          <AssociationSet Name="fk_FacilityPicGallery_FacilityUnit1" Association="dbo_casadepedroModel.fk_FacilityPicGallery_FacilityUnit1">
+            <End Role="facilityunit" EntitySet="facilityunits" />
+            <End Role="facilitypicgallery" EntitySet="facilitypicgalleries" />
+          </AssociationSet>
+          <AssociationSet Name="fk_FacilityUnit_HotelCoreService1" Association="dbo_casadepedroModel.fk_FacilityUnit_HotelCoreService1">
+            <End Role="hotelcoreservice" EntitySet="hotelcoreservices" />
+            <End Role="facilityunit" EntitySet="facilityunits" />
+          </AssociationSet>
+          <AssociationSet Name="fk_FacilityUnit_HotelCoreSubService1" Association="dbo_casadepedroModel.fk_FacilityUnit_HotelCoreSubService1">
+            <End Role="hotelcoresubservice" EntitySet="hotelcoresubservices" />
+            <End Role="facilityunit" EntitySet="facilityunits" />
+          </AssociationSet>
+          <AssociationSet Name="fk_HotelCoreSubService_HotelCoreService1" Association="dbo_casadepedroModel.fk_HotelCoreSubService_HotelCoreService1">
+            <End Role="hotelcoreservice" EntitySet="hotelcoreservices" />
+            <End Role="hotelcoresubservice" EntitySet="hotelcoresubservices" />
+          </AssociationSet>
+          <EntitySet Name="homepagesliders" EntityType="dbo_casadepedroModel.homepageslider" />
+          <EntitySet Name="pagecontents" EntityType="dbo_casadepedroModel.pagecontent" />
+          </EntityContainer>
+        <Association Name="fk_RestaurantBarReservation_Hotel1">
+          <End Type="dbo_casadepedroModel.hotel" Role="hotel" Multiplicity="0..1" />
+          <End Type="dbo_casadepedroModel.restaurantbarreservation" Role="restaurantbarreservation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="hotel">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="restaurantbarreservation">
+              <PropertyRef Name="HotelId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="facilitypicgallery">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PicUrl" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="FacilityUnitId" Type="SByte" />
+          <Property Name="EditedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="facilityunit" Relationship="dbo_casadepedroModel.fk_FacilityPicGallery_FacilityUnit1" FromRole="facilitypicgallery" ToRole="facilityunit" />
+        </EntityType>
+        <EntityType Name="facilityunit">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="SByte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="HotelCoreServiceId" Type="SByte" />
+          <Property Name="HotelCoreSubServiceId" Type="SByte" />
+          <Property Name="Details" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+          <Property Name="FrontPicUrl" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="EditBy" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="facilitypicgalleries" Relationship="dbo_casadepedroModel.fk_FacilityPicGallery_FacilityUnit1" FromRole="facilityunit" ToRole="facilitypicgallery" />
+          <NavigationProperty Name="hotelcoreservice" Relationship="dbo_casadepedroModel.fk_FacilityUnit_HotelCoreService1" FromRole="facilityunit" ToRole="hotelcoreservice" />
+          <NavigationProperty Name="hotelcoresubservice" Relationship="dbo_casadepedroModel.fk_FacilityUnit_HotelCoreSubService1" FromRole="facilityunit" ToRole="hotelcoresubservice" />
+        </EntityType>
+        <EntityType Name="hotelcoreservice">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="SByte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ServiceCategory" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="facilityunits" Relationship="dbo_casadepedroModel.fk_FacilityUnit_HotelCoreService1" FromRole="hotelcoreservice" ToRole="facilityunit" />
+          <NavigationProperty Name="hotelcoresubservices" Relationship="dbo_casadepedroModel.fk_HotelCoreSubService_HotelCoreService1" FromRole="hotelcoreservice" ToRole="hotelcoresubservice" />
+        </EntityType>
+        <EntityType Name="hotelcoresubservice">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="SByte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SubService" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="CoreServiceId" Type="SByte" />
+          <NavigationProperty Name="facilityunits" Relationship="dbo_casadepedroModel.fk_FacilityUnit_HotelCoreSubService1" FromRole="hotelcoresubservice" ToRole="facilityunit" />
+          <NavigationProperty Name="hotelcoreservice" Relationship="dbo_casadepedroModel.fk_HotelCoreSubService_HotelCoreService1" FromRole="hotelcoresubservice" ToRole="hotelcoreservice" />
+        </EntityType>
+        <Association Name="fk_FacilityPicGallery_FacilityUnit1">
+          <End Type="dbo_casadepedroModel.facilityunit" Role="facilityunit" Multiplicity="0..1" />
+          <End Type="dbo_casadepedroModel.facilitypicgallery" Role="facilitypicgallery" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="facilityunit">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="facilitypicgallery">
+              <PropertyRef Name="FacilityUnitId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_FacilityUnit_HotelCoreService1">
+          <End Type="dbo_casadepedroModel.hotelcoreservice" Role="hotelcoreservice" Multiplicity="0..1" />
+          <End Type="dbo_casadepedroModel.facilityunit" Role="facilityunit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="hotelcoreservice">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="facilityunit">
+              <PropertyRef Name="HotelCoreServiceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_FacilityUnit_HotelCoreSubService1">
+          <End Type="dbo_casadepedroModel.hotelcoresubservice" Role="hotelcoresubservice" Multiplicity="0..1" />
+          <End Type="dbo_casadepedroModel.facilityunit" Role="facilityunit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="hotelcoresubservice">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="facilityunit">
+              <PropertyRef Name="HotelCoreSubServiceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_HotelCoreSubService_HotelCoreService1">
+          <End Type="dbo_casadepedroModel.hotelcoreservice" Role="hotelcoreservice" Multiplicity="0..1" />
+          <End Type="dbo_casadepedroModel.hotelcoresubservice" Role="hotelcoresubservice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="hotelcoreservice">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="hotelcoresubservice">
+              <PropertyRef Name="CoreServiceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="homepageslider">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="SByte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ImageUrl" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="CaptionHeading" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="CaptionDesc" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="LastUpdatedBy" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="LastUpdateDateTime" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="pagecontent">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="SByte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PageTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="PageText" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+          <Property Name="PageUrl" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="PageBannerUrl" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="DefaultPageIconUrl" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="EditedBy" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="DateTimeEdited" Type="DateTime" />
+        </EntityType>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="dbo_casadepedroModelStoreContainer" CdmEntityContainer="dbo_casadepedroEntities">
+          <EntitySetMapping Name="hotels">
+            <EntityTypeMapping TypeName="dbo_casadepedroModel.hotel">
+              <MappingFragment StoreEntitySet="hotel">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="HotelName" ColumnName="HotelName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="meetingeventreservations">
+            <EntityTypeMapping TypeName="dbo_casadepedroModel.meetingeventreservation">
+              <MappingFragment StoreEntitySet="meetingeventreservation">
+                <ScalarProperty Name="ConfirmedBy" ColumnName="ConfirmedBy" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="StartDateTime" ColumnName="StartDateTime" />
+                <ScalarProperty Name="EndDateTime" ColumnName="EndDateTime" />
+                <ScalarProperty Name="NoOfPerson" ColumnName="NoOfPerson" />
+                <ScalarProperty Name="HotelId" ColumnName="HotelId" />
+                <ScalarProperty Name="MeetingEventVenueId" ColumnName="MeetingEventVenueId" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="BookingConfirmed" ColumnName="BookingConfirmed" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="meetingeventvenues">
+            <EntityTypeMapping TypeName="dbo_casadepedroModel.meetingeventvenue">
+              <MappingFragment StoreEntitySet="meetingeventvenue">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="MEVenueName" ColumnName="MEVenueName" />
+                <ScalarProperty Name="HotelId" ColumnName="HotelId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="restaurantbarreservations">
+            <EntityTypeMapping TypeName="dbo_casadepedroModel.restaurantbarreservation">
+              <MappingFragment StoreEntitySet="restaurantbarreservation">
+                <ScalarProperty Name="ConfirmedBy" ColumnName="ConfirmedBy" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="StartDateTime" ColumnName="StartDateTime" />
+                <ScalarProperty Name="EndDateTime" ColumnName="EndDateTime" />
+                <ScalarProperty Name="NoOfPerson" ColumnName="NoOfPerson" />
+                <ScalarProperty Name="HotelId" ColumnName="HotelId" />
+                <ScalarProperty Name="RestaurantBarVenueId" ColumnName="RestaurantBarVenueId" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="BookingConfirmed" ColumnName="BookingConfirmed" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="restaurantbarvenues">
+            <EntityTypeMapping TypeName="dbo_casadepedroModel.restaurantbarvenue">
+              <MappingFragment StoreEntitySet="restaurantbarvenue">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ResBarName" ColumnName="ResBarName" />
+                <ScalarProperty Name="HotelId" ColumnName="HotelId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="roomreservations">
+            <EntityTypeMapping TypeName="dbo_casadepedroModel.roomreservation">
+              <MappingFragment StoreEntitySet="roomreservation">
+                <ScalarProperty Name="ConfirmedBy" ColumnName="ConfirmedBy" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="NoOfAdult" ColumnName="NoOfAdult" />
+                <ScalarProperty Name="NoOfChild" ColumnName="NoOfChild" />
+                <ScalarProperty Name="HotelId" ColumnName="HotelId" />
+                <ScalarProperty Name="RoomTypeId" ColumnName="RoomTypeId" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="BookingConfirmed" ColumnName="BookingConfirmed" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="roomtypes">
+            <EntityTypeMapping TypeName="dbo_casadepedroModel.roomtype">
+              <MappingFragment StoreEntitySet="roomtype">
+                <ScalarProperty Name="AmountPerNight" ColumnName="AmountPerNight" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="HotelId" ColumnName="HotelId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="facilitypicgalleries">
+            <EntityTypeMapping TypeName="dbo_casadepedroModel.facilitypicgallery">
+              <MappingFragment StoreEntitySet="facilitypicgallery">
+                <ScalarProperty Name="EditedBy" ColumnName="EditedBy" />
+                <ScalarProperty Name="FacilityUnitId" ColumnName="FacilityUnitId" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="PicUrl" ColumnName="PicUrl" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="facilityunits">
+            <EntityTypeMapping TypeName="dbo_casadepedroModel.facilityunit">
+              <MappingFragment StoreEntitySet="facilityunit">
+                <ScalarProperty Name="EditBy" ColumnName="EditBy" />
+                <ScalarProperty Name="FrontPicUrl" ColumnName="FrontPicUrl" />
+                <ScalarProperty Name="Details" ColumnName="Details" />
+                <ScalarProperty Name="HotelCoreSubServiceId" ColumnName="HotelCoreSubServiceId" />
+                <ScalarProperty Name="HotelCoreServiceId" ColumnName="HotelCoreServiceId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="hotelcoreservices">
+            <EntityTypeMapping TypeName="dbo_casadepedroModel.hotelcoreservice">
+              <MappingFragment StoreEntitySet="hotelcoreservice">
+                <ScalarProperty Name="ServiceCategory" ColumnName="ServiceCategory" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="hotelcoresubservices">
+            <EntityTypeMapping TypeName="dbo_casadepedroModel.hotelcoresubservice">
+              <MappingFragment StoreEntitySet="hotelcoresubservice">
+                <ScalarProperty Name="CoreServiceId" ColumnName="CoreServiceId" />
+                <ScalarProperty Name="SubService" ColumnName="SubService" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="homepagesliders">
+            <EntityTypeMapping TypeName="dbo_casadepedroModel.homepageslider">
+              <MappingFragment StoreEntitySet="homepageslider">
+                <ScalarProperty Name="LastUpdateDateTime" ColumnName="LastUpdateDateTime" />
+                <ScalarProperty Name="LastUpdatedBy" ColumnName="LastUpdatedBy" />
+                <ScalarProperty Name="CaptionDesc" ColumnName="CaptionDesc" />
+                <ScalarProperty Name="CaptionHeading" ColumnName="CaptionHeading" />
+                <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="pagecontents">
+            <EntityTypeMapping TypeName="dbo_casadepedroModel.pagecontent">
+              <MappingFragment StoreEntitySet="pagecontent">
+                <ScalarProperty Name="DateTimeEdited" ColumnName="DateTimeEdited" />
+                <ScalarProperty Name="EditedBy" ColumnName="EditedBy" />
+                <ScalarProperty Name="DefaultPageIconUrl" ColumnName="DefaultPageIconUrl" />
+                <ScalarProperty Name="PageBannerUrl" ColumnName="PageBannerUrl" />
+                <ScalarProperty Name="PageUrl" ColumnName="PageUrl" />
+                <ScalarProperty Name="PageText" ColumnName="PageText" />
+                <ScalarProperty Name="PageTitle" ColumnName="PageTitle" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

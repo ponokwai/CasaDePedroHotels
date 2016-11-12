@@ -1,0 +1,23 @@
+﻿Dear Sir/Madam
+
+A user has left this Suite/Room reservation on Casa De Pedro hotels website:
+
+Start Date:		##StartDate##
+
+End Date:		##EndDate##
+
+No of Adults:	##Adults##
+
+No of Children:	##Children##
+
+Hotel:			##Hotel##
+
+Suite/Room:		##Suite/Room##
+
+Full Name:		##FullName##
+	
+Phone Number:	##Phone##
+
+Email:			##Email##
+
+Comment:		##Comment##

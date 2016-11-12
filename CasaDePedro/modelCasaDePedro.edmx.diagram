@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="c0ef74cc9e70486c9002b0fea4f54696" Name="Diagram1" ZoomLevel="82">
+        <EntityTypeShape EntityType="dbo_casadepedroModel.hotel" Width="1.5" PointX="9.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbo_casadepedroModel.meetingeventreservation" Width="1.5" PointX="5.375" PointY="8" IsExpanded="true" FillColor="192, 64, 0" />
+        <EntityTypeShape EntityType="dbo_casadepedroModel.meetingeventvenue" Width="1.5" PointX="3.375" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbo_casadepedroModel.restaurantbarreservation" Width="1.5" PointX="14" PointY="7.875" IsExpanded="true" FillColor="192, 64, 0" />
+        <EntityTypeShape EntityType="dbo_casadepedroModel.restaurantbarvenue" Width="1.5" PointX="11.75" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbo_casadepedroModel.roomreservation" Width="1.5" PointX="9.625" PointY="10.75" IsExpanded="true" FillColor="192, 64, 0" />
+        <EntityTypeShape EntityType="dbo_casadepedroModel.roomtype" Width="1.5" PointX="7" PointY="10.625" IsExpanded="true" />
+        <AssociationConnector Association="dbo_casadepedroModel.fk_MeetingEventReservation_Hotel1" ManuallyRouted="false" />
+        <AssociationConnector Association="dbo_casadepedroModel.fk_MeetingEventVenue_Hotel1" ManuallyRouted="false" />
+        <AssociationConnector Association="dbo_casadepedroModel.fk_RestaurantBarVenue_Hotel1" ManuallyRouted="false" />
+        <AssociationConnector Association="dbo_casadepedroModel.fk_RoomReservation_Hotel1" ManuallyRouted="false" />
+        <AssociationConnector Association="dbo_casadepedroModel.fk_RoomType_Hotel1" ManuallyRouted="false" />
+        <AssociationConnector Association="dbo_casadepedroModel.fk_MeetingEventReservation_MeetingEventVenue1" ManuallyRouted="false" />
+        <AssociationConnector Association="dbo_casadepedroModel.fk_RestaurantBarReservation_RestaurantBarVenue1" ManuallyRouted="false" />
+        <AssociationConnector Association="dbo_casadepedroModel.fk_RoomReservation_RoomType" ManuallyRouted="false" />
+        <AssociationConnector Association="dbo_casadepedroModel.fk_RestaurantBarReservation_Hotel1" />
+        <EntityTypeShape EntityType="dbo_casadepedroModel.facilitypicgallery" Width="1.5" PointX="18.625" PointY="13.5" />
+        <EntityTypeShape EntityType="dbo_casadepedroModel.facilityunit" Width="1.5" PointX="16.375" PointY="13.125" />
+        <EntityTypeShape EntityType="dbo_casadepedroModel.hotelcoreservice" Width="1.5" PointX="11.875" PointY="11.75" />
+        <EntityTypeShape EntityType="dbo_casadepedroModel.hotelcoresubservice" Width="1.5" PointX="14.125" PointY="15.375" />
+        <AssociationConnector Association="dbo_casadepedroModel.fk_FacilityPicGallery_FacilityUnit1" />
+        <AssociationConnector Association="dbo_casadepedroModel.fk_FacilityUnit_HotelCoreService1" />
+        <AssociationConnector Association="dbo_casadepedroModel.fk_FacilityUnit_HotelCoreSubService1" />
+        <AssociationConnector Association="dbo_casadepedroModel.fk_HotelCoreSubService_HotelCoreService1" />
+        <EntityTypeShape EntityType="dbo_casadepedroModel.homepageslider" Width="1.5" PointX="2.875" PointY="9.125" />
+        <EntityTypeShape EntityType="dbo_casadepedroModel.pagecontent" Width="1.5" PointX="1.375" PointY="6.625" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

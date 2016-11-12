@@ -1,0 +1,144 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Management.master.cs" Inherits="CasaDePedro.Management.Management" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link runat="server" href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <title><%: Page.Title %> | CasaDePedro Hotels</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <!--Insert CSS links-->
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
+    <%--<link href="../Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="../Content/Site.css" rel="stylesheet" />--%>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server">
+            <Scripts>
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+            </Scripts>
+        </asp:ScriptManager>
+        <!-- Navbar-->
+        <div class="navbar navbar-default navbar-static-top <%--navbar-fixed-top--%>" style="background-color:#000000;">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" runat="server" href="~/">
+                        <asp:Image ID="Image1" ImageUrl="~/Images/g3234-9.png" CssClass="img-responsive visible-sm visible-xs" runat="server" />
+                        <asp:Image ID="Image2" ImageUrl="~/Images/g3234.png" CssClass="img-responsive hidden-sm hidden-xs" runat="server" />
+                    </a>
+                </div>
+                <div class="navbar-collapse collapse navbar-right">
+                    <ul class="nav navbar-nav">
+                        <li><a runat="server" href="~/Booking/">Home</a></li>
+                        <li class="dropdown" id="frontdesk">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">FrontDesk <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a runat="server" href="~/Booking/SuitesAndRooms.aspx">Suites & Rooms Booking</a></li>
+                                <li><a runat="server" href="~/Booking/RestaurantsAndBars.aspx">Restaurants & Bars Booking</a></li>
+                                <li><a runat="server" href="~/Booking/MeetingsAndEvents.aspx">Meetings & Events Booking</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown" id="manager">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Manager <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a runat="server" href="~/Management/PageContentManager.aspx">Page Content</a></li>
+                                <li><a runat="server" href="~/Management/AllServices.aspx">Services</a></li>
+                                <li><a runat="server" href="~/Management/AddOrEditServices.aspx">Add Service</a></li>
+                                <li><a runat="server" href="~/Management/BannerManager.aspx">Slider Manager</a></li>
+                                <li><a runat="server" href="~/Management/EditPricing.aspx">Edit Pricing</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown" id="administrator">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Administrator <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a runat="server" href="~/Administrator/AllUserAccounts.aspx">Users Dashboard</a></li>
+                                <li><a runat="server" href="~/Administrator/ManageUser.aspx">Manage User</a></li>
+                                
+                            </ul>
+                        </li>
+
+                        
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <asp:ContentPlaceHolder ID="BackendContent" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
+        <footer class="wow fadeInDown animated">
+            <div class="container">
+                <p>
+                    &copy; <%: DateTime.Now.Year %> - Casa De Pedro Hotels Limited | <a href="#">Staff Mail</a> | <a href="~/ContactUs.aspx" runat="server">Contact Us</a> | Designed by:
+                    <asp:HyperLink ID="HyperLink1" NavigateUrl="http://www.rickwaisolutions.com" runat="server">Rickwai Solutions</asp:HyperLink>
+                </p>
+                <asp:LoginView ID="LoginView1" runat="server">
+                    <LoggedInTemplate>
+                        <asp:LoginName ID="LoginName1" runat="server" FormatString="Hi {0}" />
+                        &nbsp;|
+                        <asp:LoginStatus ID="LoginStatus1" runat="server" />
+                    </LoggedInTemplate>
+                </asp:LoginView>
+            </div>
+        </footer>
+    </form>
+
+</body>
+</html>
+<%--<script type="text/javascript" src='<%= Page.ResolveClientUrl("~/Scripts/jquery-2.2.0.min.js") %>'> </script>
+<script type="text/javascript" src='<%= Page.ResolveClientUrl("~/Scripts/bootstrap.min.js") %>'></script>
+<script type="text/javascript" src='<%= Page.ResolveClientUrl("~/Scripts/owl.carousel.min.js") %>'>'></script>
+<script type="text/javascript" src='<%= Page.ResolveClientUrl("~/Scripts/wow.min.js") %>'></script>--%>
+
+<script>
+    $(document).ready(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+</script>
+<script type="text/javascript">
+    $(function () {
+        $('[data-toggle="popover"]').popover();
+    })
+</script>
+<%--<script type="text/javascript">
+    $(function () {
+        $('.myToggle').bootstrapSwitch();
+    })
+</script>--%>
+<%--<script type="text/javascript">
+    $(document).ready(function () {
+
+        var owl = $("#owl-demo");
+
+        owl.owlCarousel({
+            navigation: true,
+            singleItem: true,
+            autoPlay: true,
+            navigation: true,
+            navigationText: false,
+            transitionStyle: "fade"
+        });
+
+    });
+</script>--%>
+<%--<script>
+    new WOW().init();
+</script>--%>

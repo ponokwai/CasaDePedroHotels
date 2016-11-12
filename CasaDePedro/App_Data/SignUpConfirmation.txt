@@ -1,0 +1,12 @@
+﻿Dear User
+
+An account has been created for you at www.casadepedrohotels.com.ng
+
+To log in to the website, use the following details:
+
+User name: <% UserName %>
+Your Password: <% Password %>
+
+Regards
+
+Casa De Pedro Hotels

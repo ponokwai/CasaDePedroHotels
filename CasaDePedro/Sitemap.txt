@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>http://www.casadepedrohotels.com.ng</loc>
+  </url>
+  <url>
+    <loc>http://www.casadepedrohotels.com.ng/ContactUs.aspx</loc>
+  </url>
+  <url>
+    <loc>http://www.casadepedrohotels.com.ng/SuitesAndRooms.aspx</loc>
+  </url>
+  <url>
+    <loc>http://www.casadepedrohotels.com.ng/RestaurantAndBars.aspx</loc>
+  </url>
+  <url>
+    <loc>http://www.casadepedrohotels.com.ng/MeetingsAndEvents.aspx</loc>
+  </url>
+  <url>
+    <loc>http://www.casadepedrohotels.com.ng/RecreationalVenues.aspx</loc>
+  </url>
+  <url>
+    <loc>http://www.casadepedrohotels.com.ng/ServiceView.aspx</loc>
+  </url>
+</urlset>

@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CasaDePedro", "CasaDePedro\CasaDePedro.csproj", "{3E3E50C6-32EF-4024-A20E-39BDF9B0F790}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CasaDePedro.Tests", "CasaDePedro.Tests\CasaDePedro.Tests.csproj", "{FECD9C03-3118-45FA-BB08-B5005CF91BFB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3E3E50C6-32EF-4024-A20E-39BDF9B0F790}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E3E50C6-32EF-4024-A20E-39BDF9B0F790}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E3E50C6-32EF-4024-A20E-39BDF9B0F790}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E3E50C6-32EF-4024-A20E-39BDF9B0F790}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FECD9C03-3118-45FA-BB08-B5005CF91BFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FECD9C03-3118-45FA-BB08-B5005CF91BFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FECD9C03-3118-45FA-BB08-B5005CF91BFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FECD9C03-3118-45FA-BB08-B5005CF91BFB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

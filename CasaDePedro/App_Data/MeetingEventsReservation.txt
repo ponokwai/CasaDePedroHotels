@@ -1,0 +1,21 @@
+﻿Dear Sir/Madam
+
+A user has left this Meeting/Event reservation on Casa De Pedro hotels website:
+
+Start Date&Time:##StartDate##
+
+End Date&Time:		##EndDate##
+
+No of People:	##People##
+
+Hotel:			##Hotel##
+
+Venue:			##Venue##
+
+Full Name:		##FullName##
+	
+Phone Number:	##Phone##
+
+Email:			##Email##
+
+Comment:		##Comment##

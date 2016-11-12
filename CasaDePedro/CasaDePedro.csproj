@@ -1,0 +1,647 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3E3E50C6-32EF-4024-A20E-39BDF9B0F790}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CasaDePedro</RootNamespace>
+    <AssemblyName>CasaDePedro</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.4.1.9004, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.bootstrap, Version=3.3.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AspNet.ScriptManager.bootstrap.3.3.6\lib\net45\AspNet.ScriptManager.bootstrap.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.jQuery, Version=2.2.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AspNet.ScriptManager.jQuery.2.2.1\lib\net45\AspNet.ScriptManager.jQuery.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.FriendlyUrls, Version=1.0.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.2\lib\net45\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Web.Optimization.WebForms, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.WebForms.1.1.3\lib\net45\Microsoft.AspNet.Web.Optimization.WebForms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.9.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.6.9.8\lib\net45\MySql.Data.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MySql.Data.Entity, Version=6.9.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MySql.Data.Entity.EF6, Version=6.9.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.Entity.6.9.8\lib\net45\MySql.Data.Entity.EF6.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.5.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Providers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Providers.Core.2.0.0\lib\net40\System.Web.Providers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Account\ChangePassword.aspx" />
+    <Content Include="Account\Login.aspx" />
+    <Content Include="Account\PasswordRecovery.aspx" />
+    <Content Include="Administrator\AllUserAccounts.aspx" />
+    <Content Include="Administrator\ManageUser.aspx" />
+    <Content Include="Administrator\RoleManager.aspx" />
+    <Content Include="App_Data\ContactForm.txt" />
+    <Content Include="App_Data\MeetingEventsReservation.txt" />
+    <Content Include="App_Data\PasswordChangeConfirmation.txt" />
+    <Content Include="App_Data\PasswordRecoveryConfirmation.txt" />
+    <Content Include="App_Data\RestaurantBarReservation.txt" />
+    <Content Include="App_Data\SignUpConfirmation.txt" />
+    <Content Include="App_Data\SuiteRoomReservation.txt" />
+    <Content Include="Booking\Default.aspx" />
+    <Content Include="Booking\MEBookingDetail.aspx" />
+    <Content Include="Booking\MEBookingFormView.aspx" />
+    <Content Include="Booking\RnBBookingDetail.aspx" />
+    <Content Include="Booking\RnBBookingFormView.aspx" />
+    <Content Include="Booking\SnRBookingFormView.aspx" />
+    <Content Include="ContactUs.aspx" />
+    <Content Include="Content\animate.min.css" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\owl.carousel.css" />
+    <Content Include="Content\owl.theme.css" />
+    <Content Include="Content\owl.transitions.css" />
+    <Content Include="Content\OwlCarousel\AjaxLoader.gif" />
+    <Content Include="Content\OwlCarousel\grabbing.png" />
+    <Content Include="Content\OwlCarousel\owl.carousel.css" />
+    <Content Include="Content\OwlCarousel\owl.theme.css" />
+    <Content Include="Content\OwlCarousel\owl.transitions.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="Errors\Error404.aspx" />
+    <Content Include="Errors\OtherErrors.aspx" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="Booking\MeetingsAndEvents.aspx" />
+    <Content Include="Booking\RestaurantsAndBars.aspx" />
+    <Content Include="Booking\SnRBookingDetail.aspx" />
+    <Content Include="Booking\SuitesAndRooms.aspx" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Images\Banners\g3036.png" />
+    <Content Include="Images\Banners\meetingPurple.jpg" />
+    <Content Include="Images\Banners\recreation.jpg" />
+    <Content Include="Images\Banners\relax.jpg" />
+    <Content Include="Images\Banners\wine.jpg" />
+    <Content Include="Images\facebook.png" />
+    <Content Include="Images\g3234-9.png" />
+    <Content Include="Images\g3234.png" />
+    <Content Include="Images\instagram.png" />
+    <Content Include="Images\PleaseWait.gif" />
+    <Content Include="Images\twitter.png" />
+    <Content Include="Images\youtube.png" />
+    <Content Include="jquery-ui-1.11.4\external\jquery\jquery.js" />
+    <Content Include="jquery-ui-1.11.4\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="jquery-ui-1.11.4\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="jquery-ui-1.11.4\images\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="jquery-ui-1.11.4\images\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="jquery-ui-1.11.4\images\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="jquery-ui-1.11.4\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="jquery-ui-1.11.4\images\ui-bg_gloss-wave_35_f6a828_500x100.png" />
+    <Content Include="jquery-ui-1.11.4\images\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="jquery-ui-1.11.4\images\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="jquery-ui-1.11.4\images\ui-icons_222222_256x240.png" />
+    <Content Include="jquery-ui-1.11.4\images\ui-icons_228ef1_256x240.png" />
+    <Content Include="jquery-ui-1.11.4\images\ui-icons_ef8c08_256x240.png" />
+    <Content Include="jquery-ui-1.11.4\images\ui-icons_ffd27a_256x240.png" />
+    <Content Include="jquery-ui-1.11.4\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="jquery-ui-1.11.4\index.html" />
+    <Content Include="jquery-ui-1.11.4\jquery-ui.css" />
+    <Content Include="jquery-ui-1.11.4\jquery-ui.js" />
+    <Content Include="jquery-ui-1.11.4\jquery-ui.min.css" />
+    <Content Include="jquery-ui-1.11.4\jquery-ui.min.js" />
+    <Content Include="jquery-ui-1.11.4\jquery-ui.structure.css" />
+    <Content Include="jquery-ui-1.11.4\jquery-ui.structure.min.css" />
+    <Content Include="jquery-ui-1.11.4\jquery-ui.theme.css" />
+    <Content Include="jquery-ui-1.11.4\jquery-ui.theme.min.css" />
+    <Content Include="Management\AddOrEditServices.aspx" />
+    <Content Include="Management\AddOrEditServiceSubClass.aspx" />
+    <Content Include="Management\AllServices.aspx" />
+    <Content Include="Management\BannerManager.aspx" />
+    <Content Include="Management\Default.aspx" />
+    <Content Include="Management\EditPricing.aspx" />
+    <Content Include="Management\PageContentDetails.aspx" />
+    <Content Include="Management\PageContentManager.aspx" />
+    <Content Include="Management\ServiceClassGallery.aspx" />
+    <Content Include="MeetingsAndEvents.aspx" />
+    <Content Include="packages.config" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="Frontend.Master" />
+    <Content Include="Management\Management.Master" />
+    <EntityDeploy Include="modelCasaDePedro.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>modelCasaDePedro.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="modelCasaDePedro.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>modelCasaDePedro.edmx</DependentUpon>
+      <LastGenOutput>modelCasaDePedro.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="modelCasaDePedro.edmx.diagram">
+      <DependentUpon>modelCasaDePedro.edmx</DependentUpon>
+    </Content>
+    <Content Include="modelCasaDePedro.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>modelCasaDePedro.edmx</DependentUpon>
+      <LastGenOutput>modelCasaDePedro.cs</LastGenOutput>
+    </Content>
+    <Content Include="Bundle.config" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <None Include="Properties\PublishProfiles\CasaDePedro.pubxml" />
+    <Content Include="RecreationalVenues.aspx" />
+    <Content Include="RestaurantAndBars.aspx" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery-2.2.1.js" />
+    <Content Include="Scripts\jquery-2.2.1.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\owl.carousel.js" />
+    <Content Include="Site.Mobile.Master" />
+    <Content Include="Scripts\jquery-2.2.1.min.map" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\jquery-ui-1.11.4.js" />
+    <Content Include="Scripts\owl.carousel.min.js" />
+    <Content Include="Scripts\wow.min.js" />
+    <Content Include="ServiceView.aspx" />
+    <Content Include="Sitemap.txt" />
+    <Content Include="SuitesAndRooms.aspx" />
+    <Content Include="ViewSwitcher.ascx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Account\ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ChangePassword.aspx.designer.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\PasswordRecovery.aspx.cs">
+      <DependentUpon>PasswordRecovery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\PasswordRecovery.aspx.designer.cs">
+      <DependentUpon>PasswordRecovery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administrator\AllUserAccounts.aspx.cs">
+      <DependentUpon>AllUserAccounts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administrator\AllUserAccounts.aspx.designer.cs">
+      <DependentUpon>AllUserAccounts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administrator\ManageUser.aspx.cs">
+      <DependentUpon>ManageUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administrator\ManageUser.aspx.designer.cs">
+      <DependentUpon>ManageUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administrator\RoleManager.aspx.cs">
+      <DependentUpon>RoleManager.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administrator\RoleManager.aspx.designer.cs">
+      <DependentUpon>RoleManager.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\AppConfiguration.cs" />
+    <Content Include="App_Code\BundleConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Booking\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Booking\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Booking\MEBookingDetail.aspx.cs">
+      <DependentUpon>MEBookingDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Booking\MEBookingDetail.aspx.designer.cs">
+      <DependentUpon>MEBookingDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Booking\MEBookingFormView.aspx.cs">
+      <DependentUpon>MEBookingFormView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Booking\MEBookingFormView.aspx.designer.cs">
+      <DependentUpon>MEBookingFormView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Booking\RnBBookingDetail.aspx.cs">
+      <DependentUpon>RnBBookingDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Booking\RnBBookingDetail.aspx.designer.cs">
+      <DependentUpon>RnBBookingDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Booking\RnBBookingFormView.aspx.cs">
+      <DependentUpon>RnBBookingFormView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Booking\RnBBookingFormView.aspx.designer.cs">
+      <DependentUpon>RnBBookingFormView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Booking\SnRBookingFormView.aspx.cs">
+      <DependentUpon>SnRBookingFormView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Booking\SnRBookingFormView.aspx.designer.cs">
+      <DependentUpon>SnRBookingFormView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ContactUs.aspx.cs">
+      <DependentUpon>ContactUs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ContactUs.aspx.designer.cs">
+      <DependentUpon>ContactUs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Errors\Error404.aspx.cs">
+      <DependentUpon>Error404.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Errors\Error404.aspx.designer.cs">
+      <DependentUpon>Error404.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Errors\OtherErrors.aspx.cs">
+      <DependentUpon>OtherErrors.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Errors\OtherErrors.aspx.designer.cs">
+      <DependentUpon>OtherErrors.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="facilitypicgallery.cs">
+      <DependentUpon>modelCasaDePedro.tt</DependentUpon>
+    </Compile>
+    <Compile Include="facilityunit.cs">
+      <DependentUpon>modelCasaDePedro.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Booking\MeetingsAndEvents.aspx.cs">
+      <DependentUpon>MeetingsAndEvents.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Booking\MeetingsAndEvents.aspx.designer.cs">
+      <DependentUpon>MeetingsAndEvents.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Booking\RestaurantsAndBars.aspx.cs">
+      <DependentUpon>RestaurantsAndBars.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Booking\RestaurantsAndBars.aspx.designer.cs">
+      <DependentUpon>RestaurantsAndBars.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Booking\SnRBookingDetail.aspx.cs">
+      <DependentUpon>SnRBookingDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Booking\SnRBookingDetail.aspx.designer.cs">
+      <DependentUpon>SnRBookingDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Booking\SuitesAndRooms.aspx.cs">
+      <DependentUpon>SuitesAndRooms.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Booking\SuitesAndRooms.aspx.designer.cs">
+      <DependentUpon>SuitesAndRooms.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Frontend.Master.cs">
+      <DependentUpon>Frontend.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Frontend.Master.designer.cs">
+      <DependentUpon>Frontend.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="homepageslider.cs">
+      <DependentUpon>modelCasaDePedro.tt</DependentUpon>
+    </Compile>
+    <Compile Include="hotel.cs">
+      <DependentUpon>modelCasaDePedro.tt</DependentUpon>
+    </Compile>
+    <Compile Include="hotelcoreservice.cs">
+      <DependentUpon>modelCasaDePedro.tt</DependentUpon>
+    </Compile>
+    <Compile Include="hotelcoresubservice.cs">
+      <DependentUpon>modelCasaDePedro.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Management\AddOrEditServices.aspx.cs">
+      <DependentUpon>AddOrEditServices.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Management\AddOrEditServices.aspx.designer.cs">
+      <DependentUpon>AddOrEditServices.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Management\AddOrEditServiceSubClass.aspx.cs">
+      <DependentUpon>AddOrEditServiceSubClass.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Management\AddOrEditServiceSubClass.aspx.designer.cs">
+      <DependentUpon>AddOrEditServiceSubClass.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Management\AllServices.aspx.cs">
+      <DependentUpon>AllServices.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Management\AllServices.aspx.designer.cs">
+      <DependentUpon>AllServices.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Management\BannerManager.aspx.cs">
+      <DependentUpon>BannerManager.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Management\BannerManager.aspx.designer.cs">
+      <DependentUpon>BannerManager.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Management\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Management\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Management\EditPricing.aspx.cs">
+      <DependentUpon>EditPricing.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Management\EditPricing.aspx.designer.cs">
+      <DependentUpon>EditPricing.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Management\Management.Master.cs">
+      <DependentUpon>Management.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Management\Management.Master.designer.cs">
+      <DependentUpon>Management.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Management\PageContentDetails.aspx.cs">
+      <DependentUpon>PageContentDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Management\PageContentDetails.aspx.designer.cs">
+      <DependentUpon>PageContentDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Management\PageContentManager.aspx.cs">
+      <DependentUpon>PageContentManager.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Management\PageContentManager.aspx.designer.cs">
+      <DependentUpon>PageContentManager.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Management\ServiceClassGallery.aspx.cs">
+      <DependentUpon>ServiceClassGallery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Management\ServiceClassGallery.aspx.designer.cs">
+      <DependentUpon>ServiceClassGallery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="meetingeventreservation.cs">
+      <DependentUpon>modelCasaDePedro.tt</DependentUpon>
+    </Compile>
+    <Compile Include="meetingeventvenue.cs">
+      <DependentUpon>modelCasaDePedro.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MeetingsAndEvents.aspx.cs">
+      <DependentUpon>MeetingsAndEvents.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MeetingsAndEvents.aspx.designer.cs">
+      <DependentUpon>MeetingsAndEvents.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="modelCasaDePedro.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>modelCasaDePedro.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="modelCasaDePedro.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>modelCasaDePedro.tt</DependentUpon>
+    </Compile>
+    <Compile Include="modelCasaDePedro.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>modelCasaDePedro.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="pagecontent.cs">
+      <DependentUpon>modelCasaDePedro.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RecreationalVenues.aspx.cs">
+      <DependentUpon>RecreationalVenues.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RecreationalVenues.aspx.designer.cs">
+      <DependentUpon>RecreationalVenues.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RestaurantAndBars.aspx.cs">
+      <DependentUpon>RestaurantAndBars.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RestaurantAndBars.aspx.designer.cs">
+      <DependentUpon>RestaurantAndBars.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="restaurantbarreservation.cs">
+      <DependentUpon>modelCasaDePedro.tt</DependentUpon>
+    </Compile>
+    <Compile Include="restaurantbarvenue.cs">
+      <DependentUpon>modelCasaDePedro.tt</DependentUpon>
+    </Compile>
+    <Compile Include="roomreservation.cs">
+      <DependentUpon>modelCasaDePedro.tt</DependentUpon>
+    </Compile>
+    <Compile Include="roomtype.cs">
+      <DependentUpon>modelCasaDePedro.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ServiceView.aspx.cs">
+      <DependentUpon>ServiceView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ServiceView.aspx.designer.cs">
+      <DependentUpon>ServiceView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Mobile.Master.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Mobile.Master.designer.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+    </Compile>
+    <Compile Include="SuitesAndRooms.aspx.cs">
+      <DependentUpon>SuitesAndRooms.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SuitesAndRooms.aspx.designer.cs">
+      <DependentUpon>SuitesAndRooms.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.designer.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Images\Content\" />
+    <Folder Include="Images\Sliders\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>45412</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:45412/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
